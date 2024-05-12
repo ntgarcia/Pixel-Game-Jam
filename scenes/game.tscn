@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccb1dgbojtg0x"]
+
+[sub_resource type="TileSet" id="TileSet_pj3tc"]
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_pj3tc")
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 326)
