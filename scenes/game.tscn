@@ -626,12 +626,6 @@ offset_bottom = 717.0
 
 [node name="vignette" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_isfdp")
-<<<<<<< HEAD
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 1190.0
-offset_bottom = 685.0
-=======
 offset_left = -718.0
 offset_top = -522.0
 offset_right = 2015.0
@@ -641,4 +635,3 @@ size_flags_vertical = 4
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
 color = Color(0.249186, 0.298754, 0.313432, 1)
->>>>>>> a9d0b2bcffbda7070b42610fa5ec423d5da72f94
