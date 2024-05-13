@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2458ihd0ut7f"]
+
+[ext_resource type="Script" path="res://scenes/submarine.gd" id="1_teha1"]
+[ext_resource type="Texture2D" uid="uid://rmxocj1wxnnb" path="res://assets/sprites/submarine.png" id="1_v58ah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7du11"]
+atlas = ExtResource("1_v58ah")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2x1r"]
+atlas = ExtResource("1_v58ah")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rknde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7du11")
+}],
+"loop": true,
+"name": &"angle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2x1r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bycn7"]
+radius = 5.0
+height = 18.0
+
+[node name="Submarine" type="CharacterBody2D"]
+script = ExtResource("1_teha1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rknde")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bycn7")
