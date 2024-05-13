@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://nw6cljcfvvw0"]
+
+[ext_resource type="Texture2D" uid="uid://sdueq0u3s3w0" path="res://assets/sprites/enemy.png" id="1_b0ihr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvhxg"]
+atlas = ExtResource("1_b0ihr")
+region = Rect2(0, 0, 104, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgdx0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvhxg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vj4lv"]
+radius = 8.0
+height = 98.0
+
+[node name="eel" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jgdx0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vj4lv")

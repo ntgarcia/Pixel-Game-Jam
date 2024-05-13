@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2458ihd0ut7f"]
+[gd_scene load_steps=8 format=3 uid="uid://c2458ihd0ut7f"]
 
 [ext_resource type="Script" path="res://scenes/submarine.gd" id="1_teha1"]
 [ext_resource type="Texture2D" uid="uid://rmxocj1wxnnb" path="res://assets/sprites/submarine.png" id="1_v58ah"]
+[ext_resource type="Texture2D" uid="uid://dwfq0wwi05nyj" path="res://assets/sprites/light.png" id="3_y1m76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7du11"]
 atlas = ExtResource("1_v58ah")
@@ -32,7 +33,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bycn7"]
 radius = 5.0
-height = 18.0
+height = 20.0
 
 [node name="Submarine" type="CharacterBody2D"]
 motion_mode = 1
@@ -43,6 +44,15 @@ sprite_frames = SubResource("SpriteFrames_rknde")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_bycn7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(2, -7, 2, -4, 4, -4, 4, -6, 7, -6, 7, -8, 2, -8)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(8, -7)
+scale = Vector2(0.539063, 0.428385)
+energy = 0.4
+texture = ExtResource("3_y1m76")
