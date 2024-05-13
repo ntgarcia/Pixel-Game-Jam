@@ -23,4 +23,3 @@ void fragment(){
 		COLOR.rgb += slice * texture(SCREEN_TEXTURE, SCREEN_UV + slice_offset).rgb;
 	}
 }
-
