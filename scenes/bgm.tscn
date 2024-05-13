@@ -2,6 +2,6 @@
 
 [ext_resource type="AudioStream" uid="uid://cvloerowfol2k" path="res://assets/sounds/under_water.ogg" id="1_xaclp"]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_xaclp")
 autoplay = true

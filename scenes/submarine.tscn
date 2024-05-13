@@ -49,6 +49,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_bycn7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(2, -7, 2, -4, 4, -4, 4, -6, 7, -6, 7, -8, 2, -8)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
