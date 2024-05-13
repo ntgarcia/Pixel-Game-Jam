@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://u5giekf5s25g"]
+
+[ext_resource type="AudioStream" uid="uid://cvloerowfol2k" path="res://assets/sounds/under_water.ogg" id="1_xaclp"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_xaclp")
+autoplay = true
