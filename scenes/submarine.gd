@@ -6,7 +6,16 @@ const friction = 600
 
 var input = Vector2.ZERO
 
+@onready var animated_sprite = $AnimatedSprite2D
+
 func _physics_process(delta):
+	var direction = Input.get_axis("move_left", "move_right")
+	
+	# Flip sprite on direcction
+	if direction > 0:
+		animated_sprite.flip_h = false
+	elif direction < 0:
+		animated_sprite.flip_h = true
 	player_movement(delta)
 
 func get_input():
