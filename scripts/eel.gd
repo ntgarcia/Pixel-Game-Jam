@@ -12,6 +12,10 @@ var counter = 0;
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
 
+##sounds
+@onready var idle_sound = $idle
+@onready var detect_player_sound = $detect_player
+
 func _physics_process(delta):
 	
 	## two eel states, idle and chasing player.
@@ -19,7 +23,10 @@ func _physics_process(delta):
 	if idle:
 		counter = 0;
 		speed = 10
-		print("idle")
+		
+		##TO DO: play idle sound when player gets in a certain range
+		##if(!idle_sound.has_stream_playback()):
+		##	idle_sound.play()
 		if(ray_cast_right.is_colliding()):
 			direction = -1;
 			animated_sprite.flip_h = false;
@@ -46,14 +53,16 @@ func _physics_process(delta):
 				
 ## eel detection area signal functions
 func _on_detection_area_body_entered(body):
-	idle = false
 	player = body
+	idle = false
 	player_chase = true;
-
+	detect_player_sound.play()
+		
 
 func _on_detection_area_body_exited(body):
 
 	idle = true
 	player_chase = false
 	player = null
+	
 	
