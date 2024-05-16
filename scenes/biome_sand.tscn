@@ -671,7 +671,6 @@ rotates = false
 
 [node name="Mermaid6" parent="Path2D11/PathFollow2D6" instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
-scale = Vector2(1, 1)
 
 [node name="Path2D15" type="Path2D" parent="."]
 position = Vector2(2003, 171)
@@ -685,7 +684,6 @@ rotates = false
 
 [node name="Mermaid6" parent="Path2D15/PathFollow2D6" instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
-scale = Vector2(1, 1)
 
 [node name="Path2D16" type="Path2D" parent="."]
 position = Vector2(2000, 90)
@@ -699,7 +697,6 @@ rotates = false
 
 [node name="Mermaid6" parent="Path2D16/PathFollow2D6" instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
-scale = Vector2(1, 1)
 
 [node name="Path2D17" type="Path2D" parent="."]
 position = Vector2(1997, 7)
@@ -713,7 +710,6 @@ rotates = false
 
 [node name="Mermaid6" parent="Path2D17/PathFollow2D6" instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
-scale = Vector2(1, 1)
 
 [node name="Path2D18" type="Path2D" parent="."]
 position = Vector2(2013, -72)
@@ -727,7 +723,6 @@ rotates = false
 
 [node name="Mermaid6" parent="Path2D18/PathFollow2D6" instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
-scale = Vector2(1, 1)
 
 [node name="Path2D19" type="Path2D" parent="."]
 position = Vector2(2010, -144)
@@ -741,7 +736,6 @@ rotates = false
 
 [node name="Mermaid6" parent="Path2D19/PathFollow2D6" instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
-scale = Vector2(1, 1)
 
 [node name="Path2D12" type="Path2D" parent="."]
 position = Vector2(889, 732)
@@ -755,7 +749,6 @@ rotates = false
 
 [node name="Mermaid7" parent="Path2D12/PathFollow2D7" instance=ExtResource("3_a67it")]
 position = Vector2(0.102726, -0.446846)
-scale = Vector2(1, 1)
 
 [node name="Path2D2" type="Path2D" parent="."]
 position = Vector2(-6, -147)
@@ -763,12 +756,10 @@ curve = SubResource("Curve2D_k5bis")
 
 [node name="PathFollow2D8" type="PathFollow2D" parent="Path2D2"]
 position = Vector2(309, 147)
-scale = Vector2(1, 1)
 rotates = false
 
 [node name="Mermaid8" parent="Path2D2/PathFollow2D8" instance=ExtResource("3_a67it")]
 position = Vector2(-2, 1.00006)
-scale = Vector2(1, 1)
 
 [node name="Path2D3" type="Path2D" parent="."]
 position = Vector2(1317, -722)
