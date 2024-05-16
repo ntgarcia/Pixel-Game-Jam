@@ -1,10 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://ccb1dgbojtg0x"]
+[gd_scene load_steps=12 format=3 uid="uid://ccb1dgbojtg0x"]
 
 [ext_resource type="Texture2D" uid="uid://drbal1s3ghelo" path="res://assets/sprites/background.png" id="1_c2sci"]
 [ext_resource type="PackedScene" uid="uid://dyqsh87b04up" path="res://scenes/game_world.tscn" id="2_2agjo"]
 [ext_resource type="Shader" path="res://scenes/crt.gdshader" id="3_idlls"]
 [ext_resource type="Shader" path="res://scenes/submarine.gdshader" id="3_q6dq7"]
+<<<<<<< HEAD
 [ext_resource type="Shader" path="res://scenes/wavy.gdshader" id="5_jsfoq"]
+=======
+[ext_resource type="Shader" path="res://scenes/wavy.gdshader" id="6_myvvt"]
+>>>>>>> parent of dfe2797 (Add scanlines)
 
 [sub_resource type="Curve" id="Curve_gnt6w"]
 _data = [Vector2(0.0162338, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0545454), 0.0, 0.0, 0, 0]
@@ -13,25 +17,21 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_lr6si"]
 colors = PackedColorArray(0.101895, 0.191012, 0.343136, 1, 1, 1, 1, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3c20c"]
+shader = ExtResource("6_myvvt")
+shader_parameter/frequency = 70.0
+shader_parameter/amplitude = 0.001
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ocfh"]
 shader = ExtResource("3_idlls")
 shader_parameter/levels = 3
 shader_parameter/spread = 0.01
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_16dqi"]
-shader = ExtResource("5_jsfoq")
-shader_parameter/scanline_count = 50.0
-
-[sub_resource type="Gradient" id="Gradient_hsoyf"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_tl0p6"]
-gradient = SubResource("Gradient_hsoyf")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_isfdp"]
 shader = ExtResource("3_q6dq7")
 shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/multiplier = -0.18
-shader_parameter/softness = 0.32
+shader_parameter/multiplier = -0.05
+shader_parameter/softness = 0.145
 
 [sub_resource type="Environment" id="Environment_41hai"]
 background_mode = 3
@@ -95,17 +95,17 @@ hue_variation_max = 0.36
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="wave" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_3c20c")
+offset_right = 1284.0
+offset_bottom = 722.0
+
 [node name="chroma" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_6ocfh")
 offset_left = -3.0
 offset_right = 1285.0
 offset_bottom = 717.0
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_16dqi")
-offset_right = 1277.0
-offset_bottom = 717.0
-texture = SubResource("GradientTexture1D_tl0p6")
 
 [node name="vignette" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_isfdp")
