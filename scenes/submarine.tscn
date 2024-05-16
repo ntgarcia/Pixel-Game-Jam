@@ -1,11 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2458ihd0ut7f"]
+[gd_scene load_steps=9 format=3 uid="uid://c2458ihd0ut7f"]
 
 [ext_resource type="Script" path="res://scripts/submarine.gd" id="1_teha1"]
 [ext_resource type="Texture2D" uid="uid://rmxocj1wxnnb" path="res://assets/sprites/submarine.png" id="1_v58ah"]
 [ext_resource type="Texture2D" uid="uid://dwfq0wwi05nyj" path="res://assets/sprites/light.png" id="3_y1m76"]
-[ext_resource type="AudioStream" uid="uid://bs5hi18g40a2t" path="res://assets/sounds/Submarine/metal-hit-91-200421.mp3" id="4_125b5"]
-[ext_resource type="AudioStream" uid="uid://d2wuv5reitkpi" path="res://assets/sounds/Submarine/metal-hit-94-200422.mp3" id="5_if6dj"]
-[ext_resource type="AudioStream" uid="uid://baetwkmksqing" path="res://assets/sounds/Submarine/metal-hit-96-200425.mp3" id="6_argil"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7du11"]
 atlas = ExtResource("1_v58ah")
@@ -41,13 +38,9 @@ height = 16.0
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iclll"]
 polygon = PackedVector2Array(2, -4, 4, -3, 4, 0, 5, 0, 5, 2, 6, 2, 6, 3, 8, 5, 8, 6, -5, 6, -5, 5, -6, 5, -6, 4, -7, 4, -7, 2, -8, 2, -8, 3, -9, 3, -9, 4, -10, 4, -10, -2, -9, -2, -9, -1, -8, -1, -8, 0, -7, 0, -7, -2, -6, -2, -6, -3, -5, -3, -5, -4)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bjy0o"]
-radius = 5.99992
-height = 17.9998
-
 [node name="Submarine" type="CharacterBody2D"]
 z_index = 1
-collision_layer = 2
+collision_layer = 3
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_teha1")
@@ -77,6 +70,7 @@ scale = Vector2(0.539063, 0.428385)
 energy = 0.29
 texture = ExtResource("3_y1m76")
 texture_scale = 1.58
+<<<<<<< HEAD
 
 [node name="Audio" type="Node2D" parent="."]
 
@@ -105,3 +99,5 @@ shape = SubResource("CapsuleShape2D_bjy0o")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+=======
+>>>>>>> 4f278111fdd0eded4b8dae460622ee4dd6e4eed5

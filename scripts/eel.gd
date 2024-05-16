@@ -25,12 +25,17 @@ func _physics_process(delta):
 		speed = 10
 
 
+<<<<<<< HEAD
 		##TO DO: play idle sound when player gets in a certain range
 		##if(!idle_sound.has_stream_playback()):
 		##	idle_sound.play()
 
 	if(!idle_sound.has_stream_playback()):
 		idle_sound.play()
+=======
+	if(!idle_sound.has_stream_playback()):
+
+>>>>>>> 4f278111fdd0eded4b8dae460622ee4dd6e4eed5
 
 
 	if(ray_cast_right.is_colliding()):
