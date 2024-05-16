@@ -1,8 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://u5giekf5s25g"]
+[gd_scene load_steps=5 format=3 uid="uid://u5giekf5s25g"]
 
-[ext_resource type="AudioStream" uid="uid://cvloerowfol2k" path="res://assets/sounds/under_water.ogg" id="1_xaclp"]
+[ext_resource type="AudioStream" uid="uid://c5t4gvn05boxg" path="res://assets/sounds/underwater-loop-amb-6182.mp3" id="1_5extq"]
+[ext_resource type="AudioStream" uid="uid://brc6w53q3w2li" path="res://assets/sounds/random-distorted-sines-19492.mp3" id="2_vwyot"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_xaclp")
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sio67"]
+playback_mode = 2
+streams_count = 1
+stream_0/stream = ExtResource("2_vwyot")
+stream_0/weight = 1.0
+
+[sub_resource type="GDScript" id="GDScript_lnjel"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5extq")
 volume_db = -2.364
 autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_sio67")
+autoplay = true
+bus = &"BGM"
+script = SubResource("GDScript_lnjel")
