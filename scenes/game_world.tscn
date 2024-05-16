@@ -1,22 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://y5muhvfl872d"]
 
-[ext_resource type="PackedScene" uid="uid://bafoca57tmnkq" path="res://scenes/submarine.tscn" id="1_ytqye"]
-[ext_resource type="PackedScene" uid="uid://nw6cljcfvvw0" path="res://scenes/eel.tscn" id="2_xspds"]
-[ext_resource type="PackedScene" uid="uid://7ohdo5x1kkht" path="res://scenes/hostage.tscn" id="3_ouf26"]
-[ext_resource type="PackedScene" uid="uid://doe62v2nqwhgb" path="res://scenes/mermaid.tscn" id="4_psmtn"]
+[gd_scene load_steps=6 format=3 uid="uid://yahpg5f8ly5o"]
+
+[ext_resource type="PackedScene" uid="uid://cngyneku1ihme" path="res://scenes/biome_intro.tscn" id="1_kjvgb"]
+[ext_resource type="PackedScene" uid="uid://vs6gpmuj3ya" path="res://scenes/biome_sand.tscn" id="2_nyly7"]
+[ext_resource type="PackedScene" uid="uid://dxfvjbe004qbv" path="res://scenes/biome_grass.tscn" id="3_eg0rc"]
+[ext_resource type="PackedScene" uid="uid://bp0ok5e7tw23p" path="res://scenes/biome_rock.tscn" id="4_k4s0l"]
+[ext_resource type="PackedScene" uid="uid://c4vq7asjfby16" path="res://scenes/biome_stone.tscn" id="5_crbvt"]
 
 [node name="GameWorld" type="Node2D"]
 
-[node name="Submarine" parent="." instance=ExtResource("1_ytqye")]
+[node name="Biome_Stone" parent="." instance=ExtResource("5_crbvt")]
+position = Vector2(-3984, 1848)
 
-[node name="Camera2D" type="Camera2D" parent="Submarine"]
-zoom = Vector2(2.5, 2.5)
+[node name="Biome_Rock" parent="." instance=ExtResource("4_k4s0l")]
+position = Vector2(-224, 288)
 
-[node name="eel" parent="." instance=ExtResource("2_xspds")]
-position = Vector2(117, -64)
+[node name="Biome_Grass" parent="." instance=ExtResource("3_eg0rc")]
+position = Vector2(1493, 897)
 
-[node name="Hostage" parent="." instance=ExtResource("3_ouf26")]
-position = Vector2(65, 61)
+[node name="Biome_Sand" parent="." instance=ExtResource("2_nyly7")]
+position = Vector2(1485, -88)
 
-[node name="Mermaid" parent="." instance=ExtResource("4_psmtn")]
-position = Vector2(-59, 47)
+[node name="Biome_Intro" parent="." instance=ExtResource("1_kjvgb")]
