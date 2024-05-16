@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://y5muhvfl872d"]
+
+[ext_resource type="PackedScene" uid="uid://bafoca57tmnkq" path="res://scenes/submarine.tscn" id="1_ytqye"]
+[ext_resource type="PackedScene" uid="uid://nw6cljcfvvw0" path="res://scenes/eel.tscn" id="2_xspds"]
+[ext_resource type="PackedScene" uid="uid://7ohdo5x1kkht" path="res://scenes/hostage.tscn" id="3_ouf26"]
+[ext_resource type="PackedScene" uid="uid://doe62v2nqwhgb" path="res://scenes/mermaid.tscn" id="4_psmtn"]
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="Submarine" parent="." instance=ExtResource("1_ytqye")]
+
+[node name="Camera2D" type="Camera2D" parent="Submarine"]
+zoom = Vector2(2.5, 2.5)
+
+[node name="eel" parent="." instance=ExtResource("2_xspds")]
+position = Vector2(117, -64)
+
+[node name="Hostage" parent="." instance=ExtResource("3_ouf26")]
+position = Vector2(65, 61)
+
+[node name="Mermaid" parent="." instance=ExtResource("4_psmtn")]
+position = Vector2(-59, 47)

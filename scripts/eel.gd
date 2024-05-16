@@ -33,14 +33,6 @@ func _physics_process(delta):
 	if(ray_cast_left.is_colliding()):
 		direction = 1;
 		animated_sprite.flip_h = true;
-
-		if(ray_cast_right.is_colliding()):
-			direction = -1;
-			animated_sprite.flip_h = false;
-		if(ray_cast_left.is_colliding()):
-			direction = 1;
-			animated_sprite.flip_h = true;
-
 		position.x += speed * delta * direction
 	
 	if player_chase:
