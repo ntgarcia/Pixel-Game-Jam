@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnwmsrjmuv05d"]
+
+[ext_resource type="Script" path="res://scripts/titlescreen.gd" id="1_7knj7"]
+[ext_resource type="Texture2D" uid="uid://2lgina55dg0j" path="res://assets/sprites/title.png" id="2_2xsoy"]
+[ext_resource type="FontFile" uid="uid://coixnqgc8eqk0" path="res://assets/fonts/PixelOperator8.ttf" id="2_opowx"]
+[ext_resource type="Texture2D" uid="uid://drbal1s3ghelo" path="res://assets/sprites/background.png" id="4_oxe2s"]
+
+[sub_resource type="Curve" id="Curve_i5enf"]
+_data = [Vector2(0.0338983, 0.879121), 0.0, 0.0, 0, 0, Vector2(0.983051, 0.208791), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Environment" id="Environment_bqntv"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 5.78
+glow_strength = 1.34
+glow_bloom = 0.11
+glow_blend_mode = 0
+glow_hdr_threshold = 1.94
+glow_hdr_scale = 2.32
+glow_hdr_luminance_cap = 102.84
+glow_map_strength = 0.79
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2184
+adjustment_enabled = true
+adjustment_brightness = 0.68
+adjustment_contrast = 1.08
+adjustment_saturation = 0.53
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7knj7")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-65, -45)
+scale = Vector2(4.28438, 4.48889)
+texture = ExtResource("4_oxe2s")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = 99.0
+offset_right = 78.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(75, -169)
+scale = Vector2(6.53125, 6.53125)
+texture = ExtResource("2_2xsoy")
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.69, 0.7675, 1, 1)
+theme_override_fonts/font = ExtResource("2_opowx")
+text = "Play"
+flat = true
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.3366, 0.41745, 0.66, 1)
+theme_override_fonts/font = ExtResource("2_opowx")
+text = "Quit"
+flat = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(655, 725)
+amount = 60
+lifetime = 10.0
+preprocess = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(800, 20)
+direction = Vector2(1, 60)
+spread = 102.66
+gravity = Vector2(0, -10)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+linear_accel_min = 4.69
+linear_accel_max = 15.63
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_i5enf")
+color = Color(0.419608, 0.737255, 0.980392, 1)
+hue_variation_min = 0.21
+hue_variation_max = 0.52
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.27202, 0.2378, 0.58, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bqntv")
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
