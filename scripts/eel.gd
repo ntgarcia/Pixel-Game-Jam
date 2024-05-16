@@ -24,21 +24,21 @@ func _physics_process(delta):
 		counter = 0;
 		speed = 10
 
-<<<<<<< HEAD
+
 		##TO DO: play idle sound when player gets in a certain range
 		##if(!idle_sound.has_stream_playback()):
 		##	idle_sound.play()
-=======
+
 	if(!idle_sound.has_stream_playback()):
 		idle_sound.play()
->>>>>>> dfe2797d9a84274c7c6066584aefcc575e1c39c5
 
-		if(ray_cast_right.is_colliding()):
-			direction = -1;
-			animated_sprite.flip_h = false;
-		if(ray_cast_left.is_colliding()):
-			direction = 1;
-			animated_sprite.flip_h = true;
+
+	if(ray_cast_right.is_colliding()):
+		direction = -1;
+		animated_sprite.flip_h = false;
+	if(ray_cast_left.is_colliding()):
+		direction = 1;
+		animated_sprite.flip_h = true;
 		position.x += speed * delta * direction
 	
 	if player_chase:

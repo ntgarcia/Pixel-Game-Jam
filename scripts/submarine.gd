@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var collision = false
-var max_speed = 100
-var accel = 100
+var max_speed = 80
+var accel = 80
 const friction = 200
 var input = Vector2.ZERO
 
@@ -10,9 +10,12 @@ var input = Vector2.ZERO
 
 
 ##Collision Audio
-@onready var collision_1 = $Node2D/collision1
-@onready var collision_2 = $Node2D/collision2
-@onready var collision_3 = $Node2D/collision3
+@onready var collision_1 = $Audio/collision1
+@onready var collision_2 = $Audio/collision2
+@onready var collision_3 = $Audio/collision3
+
+
+
 
 
 func _physics_process(delta):
@@ -45,7 +48,7 @@ func player_movement(delta):
 		else:
 			velocity = Vector2.ZERO
 	else:
-		if(accel < 100):
+		if(accel < 80):
 			accel += 0.2;
 		
 		if(collision):
@@ -63,12 +66,12 @@ func _on_area_2d_body_entered(body):
 	
 	collision = true;
 	##ricochet on collision
-	if(velocity.length() > 70):
+	if(velocity.length() > 20):
 		velocity= -velocity/3
 	
 	##reduce acceleration on collision
 
-	accel = accel*.95
+	accel = accel*.90
 	
 	var rng = RandomNumberGenerator.new()
 	var num = rng.randi_range(0,2)
