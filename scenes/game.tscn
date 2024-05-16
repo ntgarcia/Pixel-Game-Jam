@@ -90,7 +90,6 @@ hue_variation_max = 0.36
 [node name="TileMap" parent="." instance=ExtResource("2_2agjo")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="wave" type="ColorRect" parent="CanvasLayer"]
 visible = false
