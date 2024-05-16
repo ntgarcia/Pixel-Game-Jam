@@ -1,8 +1,6 @@
-
 [gd_scene load_steps=8 format=3 uid="uid://c6wiqj3aeu1s8"]
 
 [ext_resource type="PackedScene" uid="uid://yahpg5f8ly5o" path="res://scenes/game_world.tscn" id="1_2atlg"]
-
 [ext_resource type="Shader" path="res://scenes/scanline.gdshader" id="2_n7a5m"]
 [ext_resource type="Shader" path="res://scenes/submarine.gdshader" id="2_oo45f"]
 

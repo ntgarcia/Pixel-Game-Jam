@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cngyneku1ihme"]
+[gd_scene load_steps=6 format=3 uid="uid://cngyneku1ihme"]
 
 [ext_resource type="Texture2D" uid="uid://bins1ax1ow3uk" path="res://assets/sprites/cavesofgallet_tiles.png" id="1_yswa7"]
 [ext_resource type="PackedScene" uid="uid://bafoca57tmnkq" path="res://scenes/submarine.tscn" id="2_yk0ng"]
+[ext_resource type="PackedScene" uid="uid://nw6cljcfvvw0" path="res://scenes/eel.tscn" id="3_mpr51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4gkq6"]
 texture = ExtResource("1_yswa7")
@@ -646,3 +647,6 @@ position = Vector2(217, 360)
 
 [node name="Camera2D" type="Camera2D" parent="Submarine"]
 zoom = Vector2(2.5, 2.5)
+
+[node name="eel" parent="." instance=ExtResource("3_mpr51")]
+position = Vector2(507, 366)

@@ -650,219 +650,221 @@ layer_0/tile_data = PackedInt32Array(9830754, 655360, 11, 9765218, 655360, 10, 9
 [node name="Hostage" parent="." instance=ExtResource("2_yauld")]
 position = Vector2(2220, -195)
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Mermaids" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Mermaids"]
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Mermaids/Path2D"]
 position = Vector2(309, 147)
 rotates = false
 
-[node name="Mermaid" parent="Path2D/PathFollow2D" instance=ExtResource("3_a67it")]
+[node name="Mermaid" parent="Mermaids/Path2D/PathFollow2D" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 
-[node name="Path2D11" type="Path2D" parent="."]
+[node name="Path2D11" type="Path2D" parent="Mermaids"]
 position = Vector2(2006, 271)
 scale = Vector2(0.850499, 0.956308)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D6" type="PathFollow2D" parent="Path2D11"]
+[node name="PathFollow2D6" type="PathFollow2D" parent="Mermaids/Path2D11"]
 position = Vector2(309, 147)
 scale = Vector2(1.17578, 1.04569)
 rotates = false
 
-[node name="Mermaid6" parent="Path2D11/PathFollow2D6" instance=ExtResource("3_a67it")]
+[node name="Mermaid6" parent="Mermaids/Path2D11/PathFollow2D6" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
 
-[node name="Path2D15" type="Path2D" parent="."]
+[node name="Path2D15" type="Path2D" parent="Mermaids"]
 position = Vector2(2003, 171)
 scale = Vector2(0.850499, 0.956308)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D6" type="PathFollow2D" parent="Path2D15"]
+[node name="PathFollow2D6" type="PathFollow2D" parent="Mermaids/Path2D15"]
 position = Vector2(309, 147)
 scale = Vector2(1.17578, 1.04569)
 rotates = false
 
-[node name="Mermaid6" parent="Path2D15/PathFollow2D6" instance=ExtResource("3_a67it")]
+[node name="Mermaid6" parent="Mermaids/Path2D15/PathFollow2D6" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
 
-[node name="Path2D16" type="Path2D" parent="."]
+[node name="Path2D16" type="Path2D" parent="Mermaids"]
 position = Vector2(2000, 90)
 scale = Vector2(0.850499, 0.956308)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D6" type="PathFollow2D" parent="Path2D16"]
+[node name="PathFollow2D6" type="PathFollow2D" parent="Mermaids/Path2D16"]
 position = Vector2(309, 147)
 scale = Vector2(1.17578, 1.04569)
 rotates = false
 
-[node name="Mermaid6" parent="Path2D16/PathFollow2D6" instance=ExtResource("3_a67it")]
+[node name="Mermaid6" parent="Mermaids/Path2D16/PathFollow2D6" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
 
-[node name="Path2D17" type="Path2D" parent="."]
+[node name="Path2D17" type="Path2D" parent="Mermaids"]
 position = Vector2(1997, 7)
 scale = Vector2(0.850499, 0.956308)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D6" type="PathFollow2D" parent="Path2D17"]
+[node name="PathFollow2D6" type="PathFollow2D" parent="Mermaids/Path2D17"]
 position = Vector2(309, 147)
 scale = Vector2(1.17578, 1.04569)
 rotates = false
 
-[node name="Mermaid6" parent="Path2D17/PathFollow2D6" instance=ExtResource("3_a67it")]
+[node name="Mermaid6" parent="Mermaids/Path2D17/PathFollow2D6" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
 
-[node name="Path2D18" type="Path2D" parent="."]
+[node name="Path2D18" type="Path2D" parent="Mermaids"]
 position = Vector2(2013, -72)
 scale = Vector2(0.850499, 0.956308)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D6" type="PathFollow2D" parent="Path2D18"]
+[node name="PathFollow2D6" type="PathFollow2D" parent="Mermaids/Path2D18"]
 position = Vector2(309, 147)
 scale = Vector2(1.17578, 1.04569)
 rotates = false
 
-[node name="Mermaid6" parent="Path2D18/PathFollow2D6" instance=ExtResource("3_a67it")]
+[node name="Mermaid6" parent="Mermaids/Path2D18/PathFollow2D6" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
 
-[node name="Path2D19" type="Path2D" parent="."]
+[node name="Path2D19" type="Path2D" parent="Mermaids"]
 position = Vector2(2010, -144)
 scale = Vector2(0.850499, 0.956308)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D6" type="PathFollow2D" parent="Path2D19"]
+[node name="PathFollow2D6" type="PathFollow2D" parent="Mermaids/Path2D19"]
 position = Vector2(309, 147)
 scale = Vector2(1.17578, 1.04569)
 rotates = false
 
-[node name="Mermaid6" parent="Path2D19/PathFollow2D6" instance=ExtResource("3_a67it")]
+[node name="Mermaid6" parent="Mermaids/Path2D19/PathFollow2D6" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(0.195808, 0.422638)
 
-[node name="Path2D12" type="Path2D" parent="."]
+[node name="Path2D12" type="Path2D" parent="Mermaids"]
 position = Vector2(889, 732)
 scale = Vector2(2.07086, 1.37719)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D7" type="PathFollow2D" parent="Path2D12"]
+[node name="PathFollow2D7" type="PathFollow2D" parent="Mermaids/Path2D12"]
 position = Vector2(309, 147)
 scale = Vector2(0.48289, 0.726117)
 rotates = false
 
-[node name="Mermaid7" parent="Path2D12/PathFollow2D7" instance=ExtResource("3_a67it")]
+[node name="Mermaid7" parent="Mermaids/Path2D12/PathFollow2D7" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(0.102726, -0.446846)
 
-[node name="Path2D2" type="Path2D" parent="."]
+[node name="Path2D2" type="Path2D" parent="Mermaids"]
 position = Vector2(-6, -147)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D8" type="PathFollow2D" parent="Path2D2"]
+[node name="PathFollow2D8" type="PathFollow2D" parent="Mermaids/Path2D2"]
 position = Vector2(309, 147)
 rotates = false
 
-[node name="Mermaid8" parent="Path2D2/PathFollow2D8" instance=ExtResource("3_a67it")]
+[node name="Mermaid8" parent="Mermaids/Path2D2/PathFollow2D8" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(-2, 1.00006)
 
-[node name="Path2D3" type="Path2D" parent="."]
-position = Vector2(1317, -722)
-rotation = 1.5678
-scale = Vector2(1.62952, -0.8024)
-curve = SubResource("Curve2D_k5bis")
-
-[node name="PathFollow2D9" type="PathFollow2D" parent="Path2D3"]
-position = Vector2(309, 147)
-rotates = false
-
-[node name="Mermaid11" parent="Path2D3/PathFollow2D9" instance=ExtResource("3_a67it")]
-position = Vector2(-0.10147, 0.674942)
-rotation = 1.56932
-scale = Vector2(1.24626, -0.613686)
-skew = -0.00460351
-
-[node name="Path2D4" type="Path2D" parent="."]
-position = Vector2(1444, -716)
-rotation = 1.5678
-scale = Vector2(1.62952, -0.8024)
-curve = SubResource("Curve2D_k5bis")
-
-[node name="PathFollow2D10" type="PathFollow2D" parent="Path2D4"]
-position = Vector2(309, 147)
-scale = Vector2(1.24626, -0.613686)
-skew = -0.00460362
-rotates = false
-
-[node name="Mermaid10" parent="Path2D4/PathFollow2D10" instance=ExtResource("3_a67it")]
-position = Vector2(0.40855, -1.09327)
-rotation = -1.57234
-scale = Vector2(2.03079, 0.492465)
-skew = 0.0138818
-
-[node name="Path2D5" type="Path2D" parent="."]
-position = Vector2(1622, -722)
-rotation = 1.5678
-scale = Vector2(1.62952, -0.8024)
-curve = SubResource("Curve2D_k5bis")
-
-[node name="PathFollow2D11" type="PathFollow2D" parent="Path2D5"]
-position = Vector2(309, 147)
-scale = Vector2(1.24626, -0.613686)
-skew = -0.00460362
-rotates = false
-
-[node name="Mermaid11" parent="Path2D5/PathFollow2D11" instance=ExtResource("3_a67it")]
-position = Vector2(-2.05043, 0.907349)
-rotation = -1.57234
-scale = Vector2(2.03079, 0.492465)
-skew = 0.0138818
-
-[node name="Path2D13" type="Path2D" parent="."]
-position = Vector2(1846, 497)
-rotation = 1.5678
-scale = Vector2(0.691816, -0.894802)
-curve = SubResource("Curve2D_k5bis")
-
-[node name="PathFollow2D12" type="PathFollow2D" parent="Path2D13"]
-position = Vector2(309, 147)
-scale = Vector2(2.93547, -0.550348)
-skew = -0.0120918
-rotates = false
-
-[node name="Mermaid12" parent="Path2D13/PathFollow2D12" instance=ExtResource("3_a67it")]
-position = Vector2(0.784393, -9.78885)
-rotation = -1.57234
-scale = Vector2(2.03079, 0.492465)
-skew = 0.0138818
-
-[node name="Path2D14" type="Path2D" parent="."]
-position = Vector2(2007, 494)
-rotation = 1.5678
-scale = Vector2(0.691816, -0.894802)
-curve = SubResource("Curve2D_k5bis")
-
-[node name="PathFollow2D13" type="PathFollow2D" parent="Path2D14"]
-position = Vector2(309, 147)
-scale = Vector2(2.93547, -0.550348)
-skew = -0.0120918
-rotates = false
-
-[node name="Mermaid13" parent="Path2D14/PathFollow2D13" instance=ExtResource("3_a67it")]
-position = Vector2(-0.187969, -1.67761)
-rotation = -1.57234
-scale = Vector2(2.03079, 0.492465)
-skew = 0.0138818
-
-[node name="Path2D6" type="Path2D" parent="."]
+[node name="Path2D6" type="Path2D" parent="Mermaids"]
 position = Vector2(2428, -527)
 rotation = 1.5678
 scale = Vector2(1.62952, -0.8024)
 curve = SubResource("Curve2D_k5bis")
 
-[node name="PathFollow2D14" type="PathFollow2D" parent="Path2D6"]
+[node name="PathFollow2D14" type="PathFollow2D" parent="Mermaids/Path2D6"]
 position = Vector2(309, 147)
 scale = Vector2(1.24626, -0.613686)
 skew = -0.00460374
 rotates = false
 
-[node name="Mermaid14" parent="Path2D6/PathFollow2D14" instance=ExtResource("3_a67it")]
+[node name="Mermaid14" parent="Mermaids/Path2D6/PathFollow2D14" groups=["Mermaids"] instance=ExtResource("3_a67it")]
 position = Vector2(1.38405, -7.17389)
 rotation = -1.57234
 scale = Vector2(2.03079, 0.492465)
 skew = 0.0138818
+
+[node name="Path2D14" type="Path2D" parent="Mermaids"]
+position = Vector2(2007, 494)
+rotation = 1.5678
+scale = Vector2(0.691816, -0.894802)
+curve = SubResource("Curve2D_k5bis")
+
+[node name="PathFollow2D13" type="PathFollow2D" parent="Mermaids/Path2D14"]
+position = Vector2(309, 147)
+scale = Vector2(2.93547, -0.550348)
+skew = -0.0120918
+rotates = false
+
+[node name="Mermaid13" parent="Mermaids/Path2D14/PathFollow2D13" groups=["Mermaids"] instance=ExtResource("3_a67it")]
+position = Vector2(-0.187969, -1.67761)
+rotation = -1.57234
+scale = Vector2(2.03079, 0.492465)
+skew = 0.0138818
+
+[node name="Path2D13" type="Path2D" parent="Mermaids"]
+position = Vector2(1846, 497)
+rotation = 1.5678
+scale = Vector2(0.691816, -0.894802)
+curve = SubResource("Curve2D_k5bis")
+
+[node name="PathFollow2D12" type="PathFollow2D" parent="Mermaids/Path2D13"]
+position = Vector2(309, 147)
+scale = Vector2(2.93547, -0.550348)
+skew = -0.0120918
+rotates = false
+
+[node name="Mermaid12" parent="Mermaids/Path2D13/PathFollow2D12" groups=["Mermaids"] instance=ExtResource("3_a67it")]
+position = Vector2(0.784393, -9.78885)
+rotation = -1.57234
+scale = Vector2(2.03079, 0.492465)
+skew = 0.0138818
+
+[node name="Path2D5" type="Path2D" parent="Mermaids"]
+position = Vector2(1622, -722)
+rotation = 1.5678
+scale = Vector2(1.62952, -0.8024)
+curve = SubResource("Curve2D_k5bis")
+
+[node name="PathFollow2D11" type="PathFollow2D" parent="Mermaids/Path2D5"]
+position = Vector2(309, 147)
+scale = Vector2(1.24626, -0.613686)
+skew = -0.00460362
+rotates = false
+
+[node name="Mermaid11" parent="Mermaids/Path2D5/PathFollow2D11" groups=["Mermaids"] instance=ExtResource("3_a67it")]
+position = Vector2(-2.05043, 0.907349)
+rotation = -1.57234
+scale = Vector2(2.03079, 0.492465)
+skew = 0.0138818
+
+[node name="Path2D4" type="Path2D" parent="Mermaids"]
+position = Vector2(1444, -716)
+rotation = 1.5678
+scale = Vector2(1.62952, -0.8024)
+curve = SubResource("Curve2D_k5bis")
+
+[node name="PathFollow2D10" type="PathFollow2D" parent="Mermaids/Path2D4"]
+position = Vector2(309, 147)
+scale = Vector2(1.24626, -0.613686)
+skew = -0.00460362
+rotates = false
+
+[node name="Mermaid10" parent="Mermaids/Path2D4/PathFollow2D10" groups=["Mermaids"] instance=ExtResource("3_a67it")]
+position = Vector2(0.40855, -1.09327)
+rotation = -1.57234
+scale = Vector2(2.03079, 0.492465)
+skew = 0.0138818
+
+[node name="Path2D3" type="Path2D" parent="Mermaids"]
+position = Vector2(1317, -722)
+rotation = 1.5678
+scale = Vector2(1.62952, -0.8024)
+curve = SubResource("Curve2D_k5bis")
+
+[node name="PathFollow2D9" type="PathFollow2D" parent="Mermaids/Path2D3"]
+position = Vector2(309, 147)
+rotates = false
+
+[node name="Mermaid11" parent="Mermaids/Path2D3/PathFollow2D9" groups=["Mermaids"] instance=ExtResource("3_a67it")]
+position = Vector2(-0.10147, 0.674942)
+rotation = 1.56932
+scale = Vector2(1.24626, -0.613686)
+skew = -0.00460351

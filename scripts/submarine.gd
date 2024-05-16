@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var hp = 100;
 var collision = false
 const max_speed = 200
 var accel = 150
@@ -17,6 +17,11 @@ var input = Vector2.ZERO
 
 
 func _physics_process(delta):
+	
+	handle_animation()
+	player_movement(delta)
+	
+func handle_animation():
 	var direction = Input.get_axis("move_left", "move_right")
 	
 	# Flip sprite on direcction
@@ -24,7 +29,6 @@ func _physics_process(delta):
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
-	player_movement(delta)
 
 func get_input():
 	input.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
@@ -33,9 +37,9 @@ func get_input():
 
 func player_movement(delta):
 	input = get_input()
-	print("accel", accel)
-	print("velocity", velocity)
-	print("collision", collision)
+	##print("accel", accel)
+	##print("velocity", velocity)
+	##print("collision", collision)
 	
 	if input == Vector2.ZERO:
 		if velocity.length() > (friction * delta):
@@ -55,23 +59,25 @@ func player_movement(delta):
 		
 	move_and_slide()
 	
-
-
 func _on_area_2d_body_entered(body):
-	
-	
 	collision = true;
+	
+	if(body.is_in_group("Mermaids")):
+		hp-=20
+		print("hp", hp)
+	
+	
 	##ricochet on collision
 	if(velocity.length() > 20):
 		velocity= -velocity/3
 	
 	##reduce acceleration on collision
-
 	accel = accel*.90
-	
 	var rng = RandomNumberGenerator.new()
 	var num = rng.randi_range(0,2)
 	
+	
+	##play collision sounds
 	match num:
 		0:
 			collision_1.play()
@@ -83,4 +89,3 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	collision = false;
-
