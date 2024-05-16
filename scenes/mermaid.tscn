@@ -130,8 +130,10 @@ target_position = Vector2(-94, 0)
 [node name="idle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_x3b75")
 volume_db = -2.0
+max_distance = 1000.0
 
 [node name="detect_player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_lo5tt")
 volume_db = -2.0
 pitch_scale = 0.34
+max_distance = 1000.0
