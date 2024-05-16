@@ -1,20 +1,17 @@
 extends CharacterBody2D
 
-<<<<<<< HEAD
+
 var collision = false
-var max_speed = 80
-var accel = 80
-=======
+
 const max_speed = 200
 const accel = 150
->>>>>>> parent of f06ad63 (added submarine audio and tweaked sub movement)
 const friction = 200
 
 var input = Vector2.ZERO
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-<<<<<<< HEAD
+
 
 ##Collision Audio
 @onready var collision_1 = $Audio/collision1
@@ -22,11 +19,6 @@ var input = Vector2.ZERO
 @onready var collision_3 = $Audio/collision3
 
 
-
-
-
-=======
->>>>>>> parent of f06ad63 (added submarine audio and tweaked sub movement)
 func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	
@@ -51,7 +43,6 @@ func player_movement(delta):
 		else:
 			velocity = Vector2.ZERO
 	else:
-<<<<<<< HEAD
 		if(accel < 80):
 			accel += 0.2;
 		
@@ -91,11 +82,4 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	collision = false;
-	
-	
-=======
-		velocity += (input * accel * delta)
-		velocity = velocity.limit_length(max_speed)
-		
-	move_and_slide()
->>>>>>> parent of f06ad63 (added submarine audio and tweaked sub movement)
+
