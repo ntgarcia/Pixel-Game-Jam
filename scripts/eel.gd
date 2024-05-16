@@ -23,21 +23,9 @@ func _physics_process(delta):
 	if idle:
 		counter = 0;
 		speed = 10
-<<<<<<< HEAD
-
-
-<<<<<<< HEAD
-		##TO DO: play idle sound when player gets in a certain range
-		##if(!idle_sound.has_stream_playback()):
-		##	idle_sound.play()
 
 	if(!idle_sound.has_stream_playback()):
 		idle_sound.play()
-=======
-	if(!idle_sound.has_stream_playback()):
-
->>>>>>> 4f278111fdd0eded4b8dae460622ee4dd6e4eed5
-
 
 	if(ray_cast_right.is_colliding()):
 		direction = -1;
@@ -45,21 +33,6 @@ func _physics_process(delta):
 	if(ray_cast_left.is_colliding()):
 		direction = 1;
 		animated_sprite.flip_h = true;
-=======
-<<<<<<< HEAD
-		
-		##TO DO: play idle sound when player gets in a certain range
-		##if(!idle_sound.has_stream_playback()):
-		##	idle_sound.play()
-=======
->>>>>>> 57dddfb991f733474cc94286b62ba4b7945f15ce
-		if(ray_cast_right.is_colliding()):
-			direction = -1;
-			animated_sprite.flip_h = false;
-		if(ray_cast_left.is_colliding()):
-			direction = 1;
-			animated_sprite.flip_h = true;
->>>>>>> parent of f06ad63 (added submarine audio and tweaked sub movement)
 		position.x += speed * delta * direction
 	
 	if player_chase:

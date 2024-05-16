@@ -4,7 +4,7 @@ extends CharacterBody2D
 var collision = false
 
 const max_speed = 200
-const accel = 150
+var accel = 150
 const friction = 200
 
 var input = Vector2.ZERO

@@ -1,3 +1,59 @@
-[gd_scene format=3 uid="uid://bafoca57tmnkq"]
+[gd_scene load_steps=9 format=3 uid="uid://bafoca57tmnkq"]
+
+[ext_resource type="Texture2D" uid="uid://53ckthmvov02" path="res://assets/sprites/new_submarine.png" id="1_f4idd"]
+[ext_resource type="Script" path="res://scripts/submarine.gd" id="1_vww0c"]
+[ext_resource type="Texture2D" uid="uid://dwfq0wwi05nyj" path="res://assets/sprites/light.png" id="3_rv03p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r78ha"]
+atlas = ExtResource("1_f4idd")
+region = Rect2(0, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acgdp"]
+atlas = ExtResource("1_f4idd")
+region = Rect2(40, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr8ba"]
+atlas = ExtResource("1_f4idd")
+region = Rect2(80, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joego"]
+atlas = ExtResource("1_f4idd")
+region = Rect2(120, 0, 40, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebols"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r78ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acgdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr8ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joego")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Submarine" type="CharacterBody2D"]
+script = ExtResource("1_vww0c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ebols")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0314272
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(5, 0)
+scale = Vector2(1.5, 1)
+polygon = PackedVector2Array(1.33333, -7, 1.33333, -12, 6, -12, 6, -9, 3.33333, -9, 3.33333, -6, 6.66667, -6, 6.66667, -5, 7.33333, -5, 7.33333, -4, 8, -4, 8, -3, 8.66667, -3, 8.66667, -2, 9.33333, -2, 9.33333, 6, 8.66667, 6, 8.66667, 7, 8, 7, 8, 8, 7.33333, 8, 7.33333, 9, 6.66667, 9, 6.66667, 10, 6, 10, 6, 11, -7.33333, 11, -7.33333, 10, -8, 10, -8, 8, -8.66667, 8, -8.66667, 5, -10, 5, -11.3333, 5, -11.3333, 4, -12, 4, -12, 3, -13.3333, 3, -13.3333, 4, -14, 4, -14, 5, -15.3333, 5, -15.3333, 4, -16, 4, -16, 2, -15.3333, 2, -15.3333, 1, -14.6667, 1, -14.6667, -1, -15.3333, -1, -15.3333, -2, -16, -2, -16, -4, -15.3333, -4, -15.3333, -5, -14, -5, -14, -4, -13.3333, -4, -13.3333, -3, -12, -3, -12, -4, -11.3333, -4, -11.3333, -5, -10, -5, -10, -4, -9.33333, -4, -9.33333, -2, -10, -2, -10, -1, -8.66667, -1, -8.66667, -4, -8, -4, -8, -6, 1.33333, -6)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("3_rv03p")
+texture_scale = 0.1

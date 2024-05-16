@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6wiqj3aeu1s8"]
+
+[ext_resource type="PackedScene" uid="uid://yahpg5f8ly5o" path="res://scenes/game_world.tscn" id="1_2atlg"]
+[ext_resource type="Shader" path="res://scenes/scanline.gdshader" id="2_n7a5m"]
+[ext_resource type="Shader" path="res://scenes/submarine.gdshader" id="2_oo45f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lovnq"]
+shader = ExtResource("2_n7a5m")
+shader_parameter/scanline_count = 150.0
+
+[sub_resource type="Gradient" id="Gradient_bg8x1"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fh7e4"]
+gradient = SubResource("Gradient_bg8x1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yex3a"]
+shader = ExtResource("2_oo45f")
+shader_parameter/color = null
+shader_parameter/multiplier = 0.27
+shader_parameter/softness = 0.53
+
+[node name="Game" type="Node2D"]
+
+[node name="GameWorld" parent="." instance=ExtResource("1_2atlg")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_lovnq")
+offset_left = 2.0
+offset_right = 1281.0
+offset_bottom = 725.0
+texture = SubResource("GradientTexture1D_fh7e4")
+
+[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_yex3a")
+offset_top = -3.0
+offset_right = 1279.0
+offset_bottom = 720.0

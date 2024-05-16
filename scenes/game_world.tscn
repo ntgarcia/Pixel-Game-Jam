@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://yahpg5f8ly5o"]
+
+[ext_resource type="PackedScene" uid="uid://cngyneku1ihme" path="res://scenes/biome_intro.tscn" id="1_kjvgb"]
+[ext_resource type="PackedScene" uid="uid://vs6gpmuj3ya" path="res://scenes/biome_sand.tscn" id="2_nyly7"]
+[ext_resource type="PackedScene" uid="uid://dxfvjbe004qbv" path="res://scenes/biome_grass.tscn" id="3_eg0rc"]
+[ext_resource type="PackedScene" uid="uid://bp0ok5e7tw23p" path="res://scenes/biome_rock.tscn" id="4_k4s0l"]
+[ext_resource type="PackedScene" uid="uid://c4vq7asjfby16" path="res://scenes/biome_stone.tscn" id="5_crbvt"]
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="Biome_Stone" parent="." instance=ExtResource("5_crbvt")]
+position = Vector2(-3984, 1848)
+
+[node name="Biome_Rock" parent="." instance=ExtResource("4_k4s0l")]
+position = Vector2(-224, 288)
+
+[node name="Biome_Grass" parent="." instance=ExtResource("3_eg0rc")]
+position = Vector2(1493, 897)
+
+[node name="Biome_Sand" parent="." instance=ExtResource("2_nyly7")]
+position = Vector2(1485, -88)
+
+[node name="Biome_Intro" parent="." instance=ExtResource("1_kjvgb")]
