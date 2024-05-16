@@ -19,7 +19,6 @@ func _physics_process(delta):
 	if idle:
 		counter = 0;
 		speed = 10
-		print("idle")
 		if(ray_cast_right.is_colliding()):
 			direction = -1;
 			animated_sprite.flip_h = false;
