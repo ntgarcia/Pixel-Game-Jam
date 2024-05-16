@@ -67,9 +67,11 @@ target_position = Vector2(-94, 0)
 
 [node name="idle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_doiu7")
+volume_db = -2.0
 
 [node name="detect_player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_f3gji")
+volume_db = -2.0
 pitch_scale = 0.34
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

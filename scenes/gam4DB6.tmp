@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dyqsh87b04up"]
+[gd_scene load_steps=87 format=3 uid="uid://dyqsh87b04up"]
 
 [ext_resource type="Texture2D" uid="uid://bins1ax1ow3uk" path="res://assets/sprites/cavesofgallet_tiles.png" id="1_bp2sv"]
 [ext_resource type="Texture2D" uid="uid://dyy66ojlqcn8o" path="res://assets/sprites/seaweed.png" id="2_7fu37"]
@@ -1039,19 +1039,7 @@ sources/1 = SubResource("TileSetAtlasSource_u16s0")
 
 [sub_resource type="Curve2D" id="Curve2D_vneu5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1133, -222, 0, 0, 0, 0, 1134, -69, 0, 0, 0, 0, 1133, -222)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_ue844"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1506, -293, 0, 0, 0, 0, 1744, -293, 0, 0, 0, 0, 1506, -293)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_evtw2"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1772, -208, 0, 0, 0, 0, 1610, -209, 0, 0, 0, 0, 1772, -208)
+"points": PackedVector2Array(0, 0, 0, 0, 1133, -240, 0, 0, 0, 0, 1132, -58, 0, 0, 0, 0, 1133, -240)
 }
 point_count = 3
 
@@ -1106,90 +1094,20 @@ position = Vector2(3839, 451)
 [node name="eel" parent="." instance=ExtResource("5_kpm67")]
 position = Vector2(1111, 614)
 
-[node name="MermaidPath1" type="Path2D" parent="."]
+[node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_vneu5")
 
-[node name="Follow" type="PathFollow2D" parent="MermaidPath1"]
-position = Vector2(1133, -222)
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1133, -240)
 rotation = 1.57629
 rotates = false
 
-[node name="Mermaid" parent="MermaidPath1/Follow" instance=ExtResource("6_kf6po")]
+[node name="Mermaid" parent="Path2D/PathFollow2D" instance=ExtResource("6_kf6po")]
 position = Vector2(-1.98866, -0.422857)
 rotation = -1.57629
 scale = Vector2(0.7, 0.7)
 
-[node name="MermaidPath2" type="Path2D" parent="."]
-position = Vector2(93, 0)
-curve = SubResource("Curve2D_vneu5")
-
-[node name="Follow" type="PathFollow2D" parent="MermaidPath2"]
-position = Vector2(1133.22, -188.807)
-rotation = 1.57629
-progress = 33.2017
-rotates = false
-
-[node name="Mermaid" parent="MermaidPath2/Follow" instance=ExtResource("6_kf6po")]
-position = Vector2(-1.98866, -0.422857)
-rotation = -1.57629
-scale = Vector2(0.7, 0.7)
-
-[node name="MermaidPath3" type="Path2D" parent="."]
-position = Vector2(170, 7)
-curve = SubResource("Curve2D_vneu5")
-
-[node name="Follow" type="PathFollow2D" parent="MermaidPath3"]
-position = Vector2(1133.42, -157.038)
-rotation = 1.57629
-progress = 64.9652
-rotates = false
-
-[node name="Mermaid" parent="MermaidPath3/Follow" instance=ExtResource("6_kf6po")]
-position = Vector2(-1.98866, -0.422857)
-rotation = -1.57629
-scale = Vector2(0.7, 0.7)
-
-[node name="MermaidPath4" type="Path2D" parent="."]
-position = Vector2(0, 1)
-curve = SubResource("Curve2D_ue844")
-
-[node name="Follow" type="PathFollow2D" parent="MermaidPath4"]
-position = Vector2(1539.55, -293)
-rotation = 1.57629
-progress = 33.558
-rotates = false
-
-[node name="Mermaid" parent="MermaidPath4/Follow" instance=ExtResource("6_kf6po")]
-position = Vector2(-1.98866, -0.422857)
-rotation = -1.57629
-scale = Vector2(0.7, 0.7)
-
-[node name="MermaidPath5" type="Path2D" parent="."]
-position = Vector2(-3, 4)
-curve = SubResource("Curve2D_evtw2")
-
-[node name="Follow" type="PathFollow2D" parent="MermaidPath5"]
-position = Vector2(1647.94, -208.766)
-rotation = 1.57629
-progress = 199.944
-rotates = false
-
-[node name="Mermaid" parent="MermaidPath5/Follow" instance=ExtResource("6_kf6po")]
-position = Vector2(-1.98866, -0.422857)
-rotation = -1.57629
-scale = Vector2(0.7, 0.7)
-
-[node name="MermaidPath6" type="Path2D" parent="."]
-position = Vector2(-9, 71)
-curve = SubResource("Curve2D_evtw2")
-
-[node name="Follow" type="PathFollow2D" parent="MermaidPath6"]
-position = Vector2(1677.42, -208.584)
-rotation = 1.57629
-progress = 229.429
-rotates = false
-
-[node name="Mermaid" parent="MermaidPath6/Follow" instance=ExtResource("6_kf6po")]
-position = Vector2(-1.98866, -0.422857)
-rotation = -1.57629
+[node name="Mermaid2" parent="." instance=ExtResource("6_kf6po")]
+visible = false
+position = Vector2(1279, 129)
 scale = Vector2(0.7, 0.7)

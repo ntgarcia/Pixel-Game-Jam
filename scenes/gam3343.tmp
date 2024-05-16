@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccb1dgbojtg0x"]
+[gd_scene load_steps=13 format=3 uid="uid://ccb1dgbojtg0x"]
 
 [ext_resource type="Texture2D" uid="uid://drbal1s3ghelo" path="res://assets/sprites/background.png" id="1_c2sci"]
 [ext_resource type="PackedScene" uid="uid://dyqsh87b04up" path="res://scenes/game_world.tscn" id="2_2agjo"]
 [ext_resource type="Shader" path="res://scenes/crt.gdshader" id="3_idlls"]
 [ext_resource type="Shader" path="res://scenes/submarine.gdshader" id="3_q6dq7"]
+[ext_resource type="PackedScene" uid="uid://nw6cljcfvvw0" path="res://scenes/eel.tscn" id="6_h6v1u"]
 [ext_resource type="Shader" path="res://scenes/wavy.gdshader" id="6_myvvt"]
 
 [sub_resource type="Curve" id="Curve_gnt6w"]
@@ -26,8 +27,8 @@ shader_parameter/spread = 0.01
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_isfdp"]
 shader = ExtResource("3_q6dq7")
 shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/multiplier = -0.05
-shader_parameter/softness = 0.145
+shader_parameter/multiplier = 0.155
+shader_parameter/softness = 0.205
 
 [sub_resource type="Environment" id="Environment_41hai"]
 background_mode = 3
@@ -90,7 +91,6 @@ hue_variation_max = 0.36
 [node name="TileMap" parent="." instance=ExtResource("2_2agjo")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="wave" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -115,6 +115,9 @@ size_flags_vertical = 4
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
 color = Color(0.0774, 0.230193, 0.43, 1)
+
+[node name="eel" parent="." instance=ExtResource("6_h6v1u")]
+position = Vector2(228, 93)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_41hai")
