@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2458ihd0ut7f"]
+[gd_scene load_steps=9 format=3 uid="uid://c2458ihd0ut7f"]
 
 [ext_resource type="Script" path="res://scenes/submarine.gd" id="1_teha1"]
 [ext_resource type="Texture2D" uid="uid://rmxocj1wxnnb" path="res://assets/sprites/submarine.png" id="1_v58ah"]
@@ -35,6 +35,9 @@ animations = [{
 radius = 5.0
 height = 20.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iclll"]
+polygon = PackedVector2Array(2, -4, 4, -3, 4, 0, 5, 0, 5, 2, 6, 2, 6, 3, 8, 5, 8, 6, -5, 6, -5, 5, -6, 5, -6, 4, -7, 4, -7, 2, -8, 2, -8, 3, -9, 3, -9, 4, -10, 4, -10, -2, -9, -2, -9, -1, -8, -1, -8, 0, -7, 0, -7, -2, -6, -2, -6, -3, -5, -3, -5, -4)
+
 [node name="Submarine" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
@@ -55,8 +58,12 @@ shape = SubResource("CapsuleShape2D_bycn7")
 visible = false
 polygon = PackedVector2Array(2, -7, 2, -4, 4, -4, 4, -6, 7, -6, 7, -8, 2, -8)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(8, -7)
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_iclll")
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(7, -7)
 scale = Vector2(0.539063, 0.428385)
-energy = 0.4
+energy = 0.29
 texture = ExtResource("3_y1m76")
+texture_scale = 1.58
