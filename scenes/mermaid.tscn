@@ -111,8 +111,9 @@ shape = SubResource("CapsuleShape2D_vq5io")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.59, 0.245833, 0, 1)
+energy = 2.6
 texture = ExtResource("3_1tb4y")
-texture_scale = 0.15
+texture_scale = 0.51
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 4
@@ -129,9 +130,11 @@ target_position = Vector2(-94, 0)
 
 [node name="idle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_x3b75")
-volume_db = -2.0
+volume_db = -3.0
+max_distance = 1300.0
 
 [node name="detect_player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_lo5tt")
-volume_db = -2.0
+volume_db = -3.0
 pitch_scale = 0.34
+max_distance = 1300.0
