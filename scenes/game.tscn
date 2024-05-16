@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dyqsh87b04up" path="res://scenes/game_world.tscn" id="2_2agjo"]
 [ext_resource type="Shader" path="res://scenes/crt.gdshader" id="3_idlls"]
 [ext_resource type="Shader" path="res://scenes/submarine.gdshader" id="3_q6dq7"]
-[ext_resource type="Shader" path="res://scenes/scanline.gdshader" id="5_jsfoq"]
+[ext_resource type="Shader" path="res://scenes/wavy.gdshader" id="5_jsfoq"]
 
 [sub_resource type="Curve" id="Curve_gnt6w"]
 _data = [Vector2(0.0162338, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0545454), 0.0, 0.0, 0, 0]

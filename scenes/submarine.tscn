@@ -71,6 +71,7 @@ energy = 0.29
 texture = ExtResource("3_y1m76")
 texture_scale = 1.58
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [node name="Audio" type="Node2D" parent="."]
 
@@ -101,3 +102,5 @@ shape = SubResource("CapsuleShape2D_bjy0o")
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 =======
 >>>>>>> 4f278111fdd0eded4b8dae460622ee4dd6e4eed5
+=======
+>>>>>>> parent of f06ad63 (added submarine audio and tweaked sub movement)
