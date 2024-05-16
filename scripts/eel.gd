@@ -18,38 +18,41 @@ var counter = 0;
 
 func _physics_process(delta):
 	
+	print(idle)
+	
 	## two eel states, idle and chasing player.
 	## idle eel state just left and right horizontal movement
 	if idle:
 		counter = 0;
 		speed = 10
+		global_position.x += speed * delta * direction
+		if(ray_cast_right.is_colliding()):
+			direction = -1;
+			animated_sprite.flip_h = false;
+		if(ray_cast_left.is_colliding()):
+			direction = 1;
+			animated_sprite.flip_h = true;
+		if(!idle_sound.has_stream_playback()):
+			idle_sound.play()
 
-	if(!idle_sound.has_stream_playback()):
-		idle_sound.play()
 
-	if(ray_cast_right.is_colliding()):
-		direction = -1;
-		animated_sprite.flip_h = false;
-		position.x += speed * delta * direction
-	if(ray_cast_left.is_colliding()):
-		direction = 1;
-		animated_sprite.flip_h = true;
-		position.x += speed * delta * direction
-	
 	if player_chase:
+		
 		
 		## eel jumps at the player and slows down rapidly after encounter
 		counter +=1;
 		speed = 20 + (counter/2);
+		print(speed)
 		
-		if(player.position.x < position.x):
+		if(player.global_position.x < global_position.x):
 			animated_sprite.flip_h = false
 			direction = -1;
 		else:
 			animated_sprite.flip_h = true
 			direction = 1;
-			
-		position += (player.position - position)/speed
+		print("eelposition", position)	
+		print("playerposition", position)
+		global_position += (player.global_position - global_position)/speed
 	
 				
 ## eel detection area signal functions
