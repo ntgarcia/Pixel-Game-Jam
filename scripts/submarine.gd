@@ -2,21 +2,18 @@ extends CharacterBody2D
 
 
 var collision = false
-
 const max_speed = 200
 var accel = 150
 const friction = 200
-
 var input = Vector2.ZERO
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-
-
 ##Collision Audio
-@onready var collision_1 = $Audio/collision1
-@onready var collision_2 = $Audio/collision2
-@onready var collision_3 = $Audio/collision3
+@onready var collision_1 = $Audio/Collision1
+@onready var collision_2 = $Audio/Collision2
+@onready var collision_3 = $Audio/Collision3
+
 
 
 func _physics_process(delta):
@@ -36,6 +33,9 @@ func get_input():
 
 func player_movement(delta):
 	input = get_input()
+	print("accel", accel)
+	print("velocity", velocity)
+	print("collision", collision)
 	
 	if input == Vector2.ZERO:
 		if velocity.length() > (friction * delta):
@@ -58,6 +58,7 @@ func player_movement(delta):
 
 
 func _on_area_2d_body_entered(body):
+	
 	
 	collision = true;
 	##ricochet on collision

@@ -1,8 +1,10 @@
+
 [gd_scene load_steps=12 format=3 uid="uid://bafoca57tmnkq"]
 
 [ext_resource type="Texture2D" uid="uid://53ckthmvov02" path="res://assets/sprites/new_submarine.png" id="1_f4idd"]
 [ext_resource type="Script" path="res://scripts/submarine.gd" id="1_vww0c"]
 [ext_resource type="Texture2D" uid="uid://dwfq0wwi05nyj" path="res://assets/sprites/light.png" id="3_rv03p"]
+
 [ext_resource type="AudioStream" path="res://assets/sounds/Submarine/metal-hit-94-200422.mp3" id="4_nkrk3"]
 [ext_resource type="AudioStream" path="res://assets/sounds/Submarine/metal-hit-96-200425 (1).mp3" id="5_41etm"]
 [ext_resource type="AudioStream" path="res://assets/sounds/Submarine/metal-hit-91-200421 (1).mp3" id="6_0kamh"]
@@ -43,6 +45,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhdgn"]
+size = Vector2(40, 25)
+
 [node name="Submarine" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 5
@@ -62,7 +67,9 @@ polygon = PackedVector2Array(1.33333, -7, 1.33333, -12, 6, -12, 6, -9, 3.33333, 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 1.2
 texture = ExtResource("3_rv03p")
+
 texture_scale = 0.55
+
 
 [node name="Audio" type="Node2D" parent="."]
 
@@ -84,8 +91,10 @@ pitch_scale = 0.25
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(6, -12, 6, -7, -8, -7, -8, -6, -20, -6, -20, 6, -9, 6, -9, 9, -7, 12, 15, 12, 20, 6, 20, -2, 16, -7, 15, -7, 15, -13, 6, -13)
+
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
