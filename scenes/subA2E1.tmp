@@ -47,7 +47,7 @@ height = 17.9998
 
 [node name="Submarine" type="CharacterBody2D"]
 z_index = 1
-collision_layer = 2
+collision_layer = 3
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_teha1")
@@ -104,4 +104,3 @@ rotation = 1.57594
 shape = SubResource("CapsuleShape2D_bjy0o")
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Node2D/Area2D" to="." method="_on_area_2d_body_exited"]
