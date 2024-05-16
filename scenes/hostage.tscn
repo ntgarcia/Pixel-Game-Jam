@@ -40,9 +40,8 @@ autoplay = "default"
 frame_progress = 0.461865
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.54
 texture = ExtResource("3_iagu1")
-texture_scale = 0.1
+texture_scale = 0.21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bjigd")
