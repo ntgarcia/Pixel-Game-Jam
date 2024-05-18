@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6wiqj3aeu1s8"]
+[gd_scene load_steps=14 format=3 uid="uid://c6wiqj3aeu1s8"]
 
 [ext_resource type="PackedScene" uid="uid://yahpg5f8ly5o" path="res://scenes/game_world.tscn" id="1_2atlg"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_cnr2y"]
 [ext_resource type="Texture2D" uid="uid://drbal1s3ghelo" path="res://assets/sprites/background.png" id="1_lqy7r"]
 [ext_resource type="Shader" path="res://scenes/scanline.gdshader" id="2_n7a5m"]
 [ext_resource type="Shader" path="res://scenes/submarine.gdshader" id="2_oo45f"]
+[ext_resource type="PackedScene" uid="uid://bafoca57tmnkq" path="res://scenes/submarine.tscn" id="5_mdyth"]
+[ext_resource type="PackedScene" uid="uid://cwoufed52mhcy" path="res://scenes/pause_menu.tscn" id="6_t0rvo"]
 
 [sub_resource type="Curve" id="Curve_mckih"]
 _data = [Vector2(0.0338983, 0.879121), 0.0, 0.0, 0, 0, Vector2(0.983051, 0.208791), 0.0, 0.0, 0, 0]
@@ -49,6 +52,7 @@ adjustment_contrast = 1.08
 adjustment_saturation = 0.53
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_cnr2y")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -90,6 +94,7 @@ material = SubResource("ShaderMaterial_lovnq")
 offset_left = 2.0
 offset_right = 1281.0
 offset_bottom = 725.0
+mouse_filter = 2
 texture = SubResource("GradientTexture1D_fh7e4")
 
 [node name="Vignette" type="ColorRect" parent="CanvasLayer"]
@@ -97,9 +102,30 @@ material = SubResource("ShaderMaterial_yex3a")
 offset_top = -3.0
 offset_right = 1279.0
 offset_bottom = 720.0
+mouse_filter = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.27202, 0.2378, 0.58, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4x1gv")
+
+[node name="Submarine" parent="." instance=ExtResource("5_mdyth")]
+z_index = -2
+position = Vector2(388, 365)
+scale = Vector2(0.8, 0.8)
+
+[node name="Camera2D" type="Camera2D" parent="Submarine"]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+
+[node name="PauseMenu" parent="Submarine/Camera2D" instance=ExtResource("6_t0rvo")]
+z_index = 100
+z_as_relative = false
+offset_left = -608.75
+offset_top = -357.5
+offset_right = -608.75
+offset_bottom = -357.5
+metadata/_edit_use_anchors_ = true
