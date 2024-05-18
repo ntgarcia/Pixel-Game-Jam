@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6wiqj3aeu1s8"]
+[gd_scene load_steps=16 format=3 uid="uid://c6wiqj3aeu1s8"]
 
 [ext_resource type="PackedScene" uid="uid://yahpg5f8ly5o" path="res://scenes/game_world.tscn" id="1_2atlg"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_cnr2y"]
@@ -6,7 +6,9 @@
 [ext_resource type="Shader" path="res://scenes/scanline.gdshader" id="2_n7a5m"]
 [ext_resource type="Shader" path="res://scenes/submarine.gdshader" id="2_oo45f"]
 [ext_resource type="PackedScene" uid="uid://bafoca57tmnkq" path="res://scenes/submarine.tscn" id="5_mdyth"]
+[ext_resource type="PackedScene" uid="uid://7ohdo5x1kkht" path="res://scenes/hostage.tscn" id="6_keb6h"]
 [ext_resource type="PackedScene" uid="uid://cwoufed52mhcy" path="res://scenes/pause_menu.tscn" id="6_t0rvo"]
+[ext_resource type="Script" path="res://scenes/hostage_sand.gd" id="7_j10to"]
 
 [sub_resource type="Curve" id="Curve_mckih"]
 _data = [Vector2(0.0338983, 0.879121), 0.0, 0.0, 0, 0, Vector2(0.983051, 0.208791), 0.0, 0.0, 0, 0]
@@ -91,17 +93,19 @@ hue_variation_max = 0.52
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_lovnq")
-offset_left = 2.0
-offset_right = 1281.0
-offset_bottom = 725.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 1286.0
+offset_bottom = 724.0
 mouse_filter = 2
 texture = SubResource("GradientTexture1D_fh7e4")
 
 [node name="Vignette" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_yex3a")
-offset_top = -3.0
-offset_right = 1279.0
-offset_bottom = 720.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1285.0
+offset_bottom = 725.0
 mouse_filter = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -109,6 +113,10 @@ color = Color(0.27202, 0.2378, 0.58, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4x1gv")
+
+[node name="Hostage" parent="." instance=ExtResource("6_keb6h")]
+position = Vector2(3587, -244)
+script = ExtResource("7_j10to")
 
 [node name="Submarine" parent="." instance=ExtResource("5_mdyth")]
 z_index = -2
