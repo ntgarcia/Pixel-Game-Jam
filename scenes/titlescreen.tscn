@@ -61,6 +61,7 @@ offset_right = 78.0
 offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
